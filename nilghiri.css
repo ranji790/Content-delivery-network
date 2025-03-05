@@ -1,0 +1,307 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('back3.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+  }
+  
+  /* Overlay with low opacity */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 9, 8, 0.762); /*
+ /* Dark overlay with low opacity */
+    z-index: -1; /* Ensure the overlay stays behind the content */
+  }
+  
+
+
+
+
+
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    /* Replace with your background image path */
+  }
+  
+  nav .logo {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  nav .logo img {
+    width: 60px;
+    margin-right: 8px;
+    border-radius: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #f7f4f9;
+    font-weight: bold;
+    padding: 8px 16px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #babad2; /* Optional: change text color on hover */
+  }
+  
+  /* Add hover effect with a light red box */
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(208, 83, 83, 0.2); /* Light red color with opacity */
+    border-radius: 5px;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  
+  nav ul li a:hover::before {
+    transform: scale(1); /* Scale up to full size on hover */
+  }
+  /* Triangle Container */
+.triangle-container {
+  position: absolute;
+  top: 30%;
+  left: 10%; /* Adjust as needed */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align circles to start of the container */
+  position: relative;
+}
+
+/* Circle Styling with Images */
+/* Circle Styling with Images */
+.circle {
+  width: 289px;
+  height: 290px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  background-size: cover; /* Ensure the image covers the circle */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+/* Images for Circles */
+.circle.top {
+  background-image: url('munnar1.jpg'); /* Replace with your image path */
+}
+
+.circle.middle {
+  background-image: url('munnar2.jpg'); /* Replace with your image path */
+}
+
+.circle.bottom {
+  background-image: url('munnar3.jpg'); /* Replace with your image path */
+}
+
+/* Positioning for Triangle Layout */
+.circle.top { /* Top circle */
+  top: -200px; /* Shift upward */
+  left: 60px; /* Slightly to the right */
+}
+
+.circle.middle { /* Middle circle */
+  top: -40px;
+  left: 340px; /* Center more to the right */
+}
+
+.circle.bottom { /* Bottom circle */
+  top: 130px; /* Shift downward */
+  left: 60px; /* Slightly to the right */
+}
+/* Paragraph Container */
+.paragraph-container {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  right: 10%; /* Adjust horizontal positioning */
+  transform: translateY(-50%); /* Center aligns vertically */
+  width: 500px; 
+  height:fit-content;/* Adjust width as needed */
+  padding: 20px;
+  background-color: rgba(49, 47, 47, 0.481); /* Semi-transparent background */
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  text-align: justify; /* Align text neatly */
+  font-size: 1rem; /* Adjust font size */
+  color: #f4f8faee; /* Text color */
+  border-color: none;
+}
+
+/* Paragraph Styling */
+.paragraph-container p {
+  margin: 0;
+  line-height: 1.6;
+   font-family: 'Pacifico', cursive;
+   font-size: larger/* Improve readability */
+}
+.chatbot-header {
+  background-color: #FFA500;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Chatbot Styling */
+.chatbot {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 200px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot-header {
+  background-color: #FFA500;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chatbot {
+  position: fixed;
+  bottom: 50px;  
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 60px;  /* Default collapsed size */
+  transition: height 0.3s ease-in-out;
+  z-index: 1000; /* Ensure chatbot is above other elements */
+}
+
+.chatbot.expanded {
+  height: 300px;  /* Adjusted expanded height */
+}
+
+.chatbot-header {
+  padding: 10px;
+  background-color: #FFA500;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+}
+
+.arrow-down {
+  font-size: 20px;
+  margin-top: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chatbot-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chatbot-message {
+  margin: 10px 0;
+}
+
+.bot-message p {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.user-message p {
+  background-color: #ffa500;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+input[type="text"] {
+  width: calc(100% - 60px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  width: 50px;
+  padding: 10px;
+  background-color: #FFA500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FF8C00;
+}

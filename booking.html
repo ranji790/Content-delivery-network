@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <img src="logo.webp" alt="Logo">
+        </div>
+        <ul>
+          <li><a href="website.html">Home</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    <h1>Book Your Trip</h1>
+    <form id="booking-form" action="/submit" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination">
+            <option value="Munnar">Munnar</option>
+            <option value="Athirappalli Waterfalls">Athirappalli Waterfalls</option>
+            <option value="Kuttanad">Kuttanad</option>
+        </select><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script> 
+</body>
+</html>

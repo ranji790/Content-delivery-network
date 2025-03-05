@@ -1,0 +1,372 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('background.jpg'); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+}
+
+/* Overlay with low opacity */
+body::before {
+  content:"";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 22, 20, 0.762); /* Dark overlay with low opacity */
+  z-index: -1; /* Ensure the overlay stays behind the content */
+}
+
+/* Navigation Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  width: 60px;
+  margin-right: 8px;
+  border-radius: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffffff; /* Optional: change text color on hover */
+}
+
+/* Add hover effect with a light red box */
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(208, 83, 83, 0.2); /* Light red color with opacity */
+  border-radius: 5px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+nav ul li a:hover::before {
+  transform: scale(1); /* Scale up to full size on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* Reduced gap between hero content and image */
+  padding: 10px;
+  background-color: rgba(4, 7, 7, 0.637);
+  opacity: 0.7;
+  width: 60%; /* Set a fixed width to stop after image */
+  margin: 0;
+  flex-shrink: 0; /* Prevent shrinking */
+  border-radius: 20px;
+}
+
+/* Hero Content */
+.hero-content {
+  max-width: 500px; /* Control width of content */
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+
+
+.explore-btn {
+  display: inline-flex; /* Use flex for better alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center text horizontally */
+  padding: 15px 80px; /* Adjust padding for proper size */
+  background-color: #FFA500; /* Button background color */
+  border: none; /* Remove border */
+  color: #ffffff; /* Text color */
+  font-weight: bold; /* Bold text */
+  font-size: 16px; /* Font size */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  white-space: nowrap;
+  margin-left:25px ; /* Prevent text wrapping */
+}
+
+.explore-btn::after {
+  content: "→"; /* Add arrow */
+  margin-left: 10px; /* Space between text and arrow */
+  font-size: 18px; /* Adjust arrow size */
+}
+
+.explore-btn:hover {
+  background-color: #FF8C00; /* Darker orange on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+
+/* Hero Image */
+.hero-image {
+  max-width: 300px; /* Make the image smaller */
+  height: auto;
+  padding-right: 0;
+  margin-left: 0;
+  animation: slideIn 1s ease-in-out;
+  border-radius: 10px;
+}
+
+/* Right Paragraph Styling */
+.right-paragraph {
+  position: absolute;
+  top: 50%;
+  right: 0; /* Align to the right of the screen */
+  width: 30%; /* Takes up the remaining 30% width */
+  background-color: rgba(0, 0, 0, 0.3); /* Optional background */
+  padding: 2rem;
+  color: rgb(24, 8, 241);
+  transform: translateY(-50%); /* Vertically align to center */
+  margin-left: 40px; /* Creates space from the hero section */
+  z-index: 1; /* Ensure PR section stays above other elements */
+}
+
+/* Paragraph Text */
+.right-paragraph p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+}
+/* Featured Destinations Section Styling */
+.featured-destinations {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  gap: 5rem;
+}
+
+.featured-destinations .destination {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+   /* ooth transition for the shadow */
+}
+
+.featured-destinations .destination img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-destinations .destination span {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+/* Shadow on the right side on hover */
+.featured-destinations .destination:hover {
+  box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);/* Right side shadow effect */
+}
+
+
+/* Animation for Hero Image */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.featured-destinations .destination:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(139, 59, 59, 0.2);
+  border-radius: 5px;
+}
+.headfont{
+  font-family:'Times New Roman', Times, serif;
+  color: rgb(236, 234, 230);
+
+}
+.par{
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: #ffffff;
+
+
+}
+.right-paragraph par2{
+  font-family: 'Pacifico', cursive;
+  color: rgb(212, 130, 7);
+}
+.par2{
+  font-family: 'Pacifico', cursive;
+  color: rgba(232, 223, 123, 0.929);
+}
+/* Chatbot Styling */
+.chatbot {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 200px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot-header {
+  background-color: #FFA500;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chatbot {
+  position: fixed;
+  bottom: 50px;  
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 60px;  /* Default collapsed size */
+  transition: height 0.3s ease-in-out;
+  z-index: 1000; /* Ensure chatbot is above other elements */
+}
+
+.chatbot.expanded {
+  height: 300px;  /* Adjusted expanded height */
+}
+
+.chatbot-header {
+  padding: 10px;
+  background-color: #FFA500;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+}
+
+.arrow-down {
+  font-size: 20px;
+  margin-top: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chatbot-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chatbot-message {
+  margin: 10px 0;
+}
+
+.bot-message p {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.user-message p {
+  background-color: #ffa500;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+input[type="text"] {
+  width: calc(100% - 60px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  width: 50px;
+  padding: 10px;
+  background-color: #FFA500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FF8C00;
+}
